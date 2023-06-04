@@ -1,0 +1,15 @@
+version: '3'
+services:
+  minecraft:
+    image: itzg/minecraft-server
+    restart: always
+    volumes:
+      - minecraft:/data
+    env_file:
+      - .env
+    ports:
+      - 25565:25565/udp
+      - 25565:25565/tcp
+
+volumes:
+  minecraft:
